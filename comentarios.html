@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Opiniones y comentarios de clientas sobre Miau's Nails." />
+  <title>Comentarios | Miau's Nails</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="Imagenes/logo 1.png" alt="Logo" width="100" height="100" />
+      <h1>Miau's Nails</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="comentarios.html">Comentarios</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="comentarios-container">
+    <section class="comentarios">
+      <h2>Testimonios de nuestras clientas</h2>
+      <div id="listaComentarios">
+        <div class="comentario">
+          <h3>Lucía G.</h3>
+          <p>¡Increíble atención y mis uñas quedaron perfectas! Sin duda volveré.</p>
+        </div>
+        <div class="comentario">
+          <h3>Valeria M.</h3>
+          <p>Muy profesional y delicada. El ambiente es muy agradable.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="formulario-comentario">
+      <h2>Deja tu comentario</h2>
+      <form id="comentarioForm">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required />
+
+        <label for="comentario">Comentario:</label>
+        <textarea id="comentario" name="comentario" rows="4" required></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Salón Manicurista. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="script1.js"></script>
+</body>
+</html>

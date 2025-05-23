@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Salón de manicura profesional para cuidar tus manos y uñas." />
+  <title>Salón Manicurista</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Estilo para el mensaje flotante */
+    .mensaje-flotante {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #4CAF50;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      transform: translateY(20px);
+      font-family: Arial, sans-serif;
+      z-index: 9999;
+    }
+
+    .mensaje-flotante.mostrar {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="Imagenes/logo 1.png" alt="Logo" width="200" height="200" />
+      <h1>Miau's Nails</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="comentarios.html">Comentarios</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Sección de Inicio -->
+  <section id="inicio" class="inicio">
+    <div class="container">
+      <div class="inicio-texto">
+        <h1>Bienvenido a Miau's Nails</h1>
+        <p class="subtitulo">¡Tu salón de manicura exclusivo para ti!</p>
+        <p>
+          En Miau's Nails, nos apasiona resaltar tu belleza y estilo con diseños únicos de uñas y cuidados de calidad. Desde la manicura clásica hasta los diseños más innovadores, tenemos todo lo que necesitas para lucir unas manos espectaculares.
+        </p>
+        <p>¡Déjanos consentirte y hacer que cada detalle de tus uñas sea perfecto!</p>
+        <a href="servicios.html" class="btn-explorar">Explorar Servicios</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de Servicios -->
+  <section id="servicios">
+    <div class="container">
+      <h2>Servicios</h2>
+      <div class="servicios-lista">
+        <div class="servicio">
+          <h3>Gel X</h3>
+          <p>Técnica innovadora que utiliza extensiones de gel preformadas, ofreciendo un acabado natural, duradero y menos agresivo para la uña natural.</p>
+        </div>
+        <div class="servicio">
+          <h3>Pedicure Spa</h3>
+          <p>Tratamiento completo para pies que incluye exfoliación, hidratación, corte y limado de uñas, más esmaltado y masaje relajante.</p>
+        </div>
+        <div class="servicio">
+          <h3>Acrílicas</h3>
+          <p>Uñas esculpidas con monómero y polímero acrílico, ideales para alargar y fortalecer, con gran variedad de diseños y estilos.</p>
+        </div>
+        <div class="servicio">
+          <h3>Mantenimiento</h3>
+          <p>Servicio para rellenar el crecimiento de uñas esculpidas, restaurar el diseño original y mantener su forma y resistencia.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de Blog -->
+  <section id="blog">
+    <div class="container">
+      <h2>Blog</h2>
+      <div class="blog-lista">
+        <article class="entrada-blog">
+          <h3>Cuidados esenciales para uñas saludables</h3>
+          <p>Descubre tips para mantener tus uñas fuertes y saludables todo el año.</p>
+          <a href="blog.html">Leer más...</a>
+        </article>
+        <article class="entrada-blog">
+          <h3>Tendencias 2025 en diseños de uñas</h3>
+          <p>Explora los estilos y colores que marcarán tendencia esta temporada.</p>
+          <a href="blog.html">Leer más...</a>
+        </article>
+        <article class="entrada-blog">
+          <h3>Beneficios de la manicura spa</h3>
+          <p>Conoce cómo nuestros tratamientos pueden revitalizar tus manos y mente.</p>
+          <a href="blog.html">Leer más...</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de Comentarios -->
+  <section id="comentarios">
+    <div class="container">
+      <h2>Comentarios</h2>
+      <div class="comentarios">
+        <p>"¡El mejor salón de manicura que he visitado! Las uñas me duran semanas." - Ana G.</p>
+        <p>"Excelente servicio, muy amables y profesionales." - Laura M.</p>
+      </div>
+      <a href="comentarios.html">Ver más...</a> 
+    </div>
+  </section>
+
+  <!-- Sección de Contacto -->
+  <section id="contacto">
+    <div class="container">
+      <h2>Contacto</h2>
+      <form id="contactForm">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required />
+
+        <label for="telefono">Teléfono:</label>
+        <input type="number" id="telefono" name="telefono" required />
+
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" required></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+
+      <p>También puedes seguirnos en nuestras redes sociales:</p>
+      <ul>
+        <li><a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Mensaje flotante -->
+  <div id="mensajeFlotante" class="mensaje-flotante">Mensaje enviado ✅</div>
+
+  <footer>
+    <p>&copy; 2025 Salón Manicurista. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const mensajeFlotante = document.getElementById('mensajeFlotante');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Mostrar mensaje
+      mensajeFlotante.classList.add('mostrar');
+
+      // Ocultar mensaje después de 3 segundos
+      setTimeout(() => {
+        mensajeFlotante.classList.remove('mostrar');
+      }, 3000);
+
+      // Limpiar formulario
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>

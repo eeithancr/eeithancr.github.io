@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Tratamiento de uñas con funda de calcio - Miau's Nails" />
+  <title>Funda de Calcio - Miau's Nails</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff6f9;
+      color: #333;
+    }
+    header {
+      background-color: #ffe4ec;
+      padding: 20px;
+      text-align: center;
+    }
+    .logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .logo img {
+      max-width: 150px;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 10px;
+    }
+    nav a {
+      text-decoration: none;
+      color: #c2185b;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #6a1b9a;
+    }
+    .servicio-detalle {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 40px;
+      padding: 60px 20px;
+      background-color: #fff;
+    }
+    .imagen-servicio img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 16px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    }
+    .info-servicio {
+      max-width: 550px;
+      padding: 20px;
+      background-color: #f9f0ff;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+    .info-servicio h2 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: #8e24aa;
+    }
+    .info-servicio p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+    .info-servicio ul {
+      padding-left: 20px;
+      margin-bottom: 20px;
+    }
+    .info-servicio ul li {
+      margin-bottom: 8px;
+      list-style-type: "💅 ";
+    }
+    .precio {
+      font-size: 1.5rem;
+      color: #8e24aa;
+      font-weight: bold;
+    }
+    .btn-agendar {
+      display: inline-block;
+      margin-top: 15px;
+      background-color: #ab47bc;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+    .btn-agendar:hover {
+      background-color: #8e24aa;
+    }
+    footer {
+      background-color: #ffe4ec;
+      padding: 15px;
+      text-align: center;
+      margin-top: 40px;
+    }
+    @media (max-width: 768px) {
+      .servicio-detalle {
+        flex-direction: column;
+        text-align: center;
+      }
+      .imagen-servicio img {
+        max-width: 90%;
+      }
+      .info-servicio {
+        margin-top: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="Imagenes/logo 1.png" alt="Logo Miau's Nails">
+      <h1>Miau's Nails</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="comentarios.html">Comentarios</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="servicio-detalle">
+    <div class="imagen-servicio">
+      <img src="Imagenes/FundaDeCalcio.jpeg" alt="Funda de Calcio">
+    </div>
+    <div class="info-servicio">
+      <h2>Funda de <span>Calcio</span></h2>
+      <p>Tratamiento especial para fortalecer y proteger uñas frágiles. Ideal para quienes buscan una alternativa natural y saludable.</p>
+      <ul>
+        <li>✔ Fortalece la uña natural</li>
+        <li>✔ Aumenta la resistencia</li>
+        <li>✔ Acabado natural y brillante</li>
+      </ul>
+      <p class="precio">Precio: <strong>$12 USD</strong></p>
+      <a href="contacto.html" class="btn-agendar">Agendar cita</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Miau's Nails. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>

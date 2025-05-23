@@ -1,0 +1,370 @@
+/* Estilos Generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f9;
+  color: #333;
+  text-align: center;
+}
+
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #9c4e97;
+  color: white;
+  padding: 20px 40px;
+  border-bottom: 4px solid #7e3a72;
+  flex-wrap: wrap;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #f4b2d1;
+}
+
+/* Sección de Inicio */
+#inicio {
+  background-image: url('https://comfenalcoquindio.com/wp-content/uploads/2023/08/tecnico-laboral-en-manicure-y-pedicure-2.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 100px 20px;
+  position: relative;
+}
+
+.inicio::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255, 255, 255, 0.85);
+  z-index: -1;
+}
+
+.inicio-texto h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  animation: fadeIn 2s ease-in-out;
+  color: #5c2c92;
+}
+
+.subtitulo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.inicio-texto p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.btn-explorar {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #9c4e97;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-explorar:hover {
+  background-color: #7e3a72;
+  transform: scale(1.05);
+}
+
+/* Animación fadeIn */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Contenedores generales */
+.container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+/* Títulos */
+h1, h2 {
+  color: #6a2c7f;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+/* Sección de Servicios */
+#servicios {
+  background-color: blanchedalmond;
+  padding: 60px 0;
+}
+
+.servicios-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.servicio {
+  background-color: #f6e6fa;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.servicio:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.servicio h3 {
+  color: #5c2c92;
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+}
+
+.servicio p {
+  color: #333;
+  font-size: 1rem;
+}
+
+/* Sección de Blog */
+#blog {
+  background-color: #fff;
+  padding: 60px 0;
+}
+
+.blog-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.entrada-blog {
+  background-color: #f6e6fa;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.entrada-blog:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.entrada-blog h3 {
+  color: #5c2c92;
+  margin-bottom: 12px;
+}
+
+.entrada-blog p {
+  color: #555;
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+.entrada-blog a {
+  color: #9c4e97;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.entrada-blog a:hover {
+  color: #7e3a72;
+  text-decoration: underline;
+}
+
+/* Sección de Comentarios/Testimonios */
+#comentarios {
+  background-color: #fef0f8;
+  padding: 60px 0;
+}
+
+.comentarios p {
+  background-color: #e0a7c3;
+  color: #5d3d5a;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+button#verMasComentarios {
+  background-color: #9c4e97;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+button#verMasComentarios:hover {
+  background-color: #7e3a72;
+}
+
+/* Sección de Contacto */
+#contacto {
+  background-color: #fff;
+  padding: 60px 0;
+}
+
+form {
+  background-color: #f6e6fa;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+form label {
+  color: #5c2c92;
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: 600;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #333;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+form button {
+  background-color: #9c4e97;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #7e3a72;
+}
+
+#contacto ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 20px;
+  padding: 0;
+}
+
+#contacto ul li a {
+  color: #9c4e97;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+#contacto ul li a:hover {
+  color: #7e3a72;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 25px 0;
+  background-color: #9c4e97;
+  color: white;
+  font-size: 0.9rem;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .servicios-lista {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .blog-lista {
+    grid-template-columns: 1fr;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .comentarios p {
+    font-size: 0.9rem;
+  }
+
+.selected {
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
+}
+
+}
+
+

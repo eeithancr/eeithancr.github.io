@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Miau's Nails - Contacto</title>
+  <style>
+    /* Reset básico */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fff0f6;
+      color: #4b2e42;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background-color: #b3477e;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      box-shadow: 0 4px 8px rgb(179 71 126 / 0.4);
+    }
+    header .logo img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid white;
+    }
+    header .logo h1 {
+      margin: 0;
+      font-weight: 700;
+      font-size: 1.8rem;
+      user-select: none;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.2rem;
+      padding: 0;
+      margin-left: auto;
+      flex-wrap: wrap;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.3rem 0.8rem;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    nav ul li a:hover, nav ul li a:focus {
+      background-color: #7c1c4a;
+      outline: none;
+    }
+    main {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      max-width: 1000px;
+      margin: 2rem auto 4rem auto;
+      padding: 0 1rem;
+      justify-content: center;
+    }
+    /* Calendario */
+    .calendar {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(179, 71, 126, 0.25);
+      padding: 1rem 1.5rem 2rem 1.5rem;
+      width: 320px;
+      user-select: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .calendar header {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    select {
+      padding: 0.4rem 0.7rem;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: 2px solid #b3477e;
+      color: #4b2e42;
+      background-color: #fff0f6;
+      cursor: pointer;
+      transition: border-color 0.3s ease;
+    }
+    select:focus {
+      border-color: #7c1c4a;
+      outline: none;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: center;
+      font-weight: 600;
+      user-select: none;
+    }
+    thead th {
+      color: #b3477e;
+      padding-bottom: 8px;
+    }
+    tbody td {
+      padding: 10px 0;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      user-select: none;
+    }
+    tbody td:hover:not(.disabled) {
+      background-color: #b3477e;
+      color: white;
+    }
+    tbody td.disabled {
+      color: #ccc;
+      cursor: default;
+    }
+    tbody td.selected {
+      background-color: #7c1c4a;
+      color: white;
+      font-weight: 700;
+    }
+    /* Formulario */
+    #contacto {
+      background: white;
+      padding: 2rem 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(179, 71, 126, 0.25);
+      width: 360px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      box-sizing: border-box;
+    }
+    #contacto h2 {
+      color: #b3477e;
+      margin-bottom: 1rem;
+      text-align: center;
+      font-size: 1.8rem;
+    }
+    label {
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+      display: block;
+      color: #4b2e42;
+    }
+    input[type="text"],
+    input[type="tel"],
+    textarea {
+      width: 100%;
+      padding: 0.5rem 0.75rem;
+      border-radius: 6px;
+      border: 2px solid #b3477e;
+      font-size: 1rem;
+      font-family: inherit;
+      resize: vertical;
+      background-color: #fff0f6;
+      color: #4b2e42;
+      transition: border-color 0.3s ease;
+    }
+    input[type="text"]:focus,
+    input[type="tel"]:focus,
+    textarea:focus {
+      border-color: #7c1c4a;
+      outline: none;
+      background-color: #fff;
+    }
+    textarea {
+      min-height: 100px;
+    }
+    input[type="hidden"] {
+      display: none;
+    }
+    button {
+      background-color: #b3477e;
+      color: white;
+      border: none;
+      padding: 0.75rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 0.5rem;
+    }
+    button:disabled {
+      background-color: #dba9c8;
+      cursor: not-allowed;
+    }
+    button:hover:not(:disabled),
+    button:focus:not(:disabled) {
+      background-color: #7c1c4a;
+      outline: none;
+    }
+    /* Mensaje flotante */
+    .mensaje-flotante {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: #4caf50;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.25);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      transform: translateY(20px);
+      font-weight: 700;
+      z-index: 9999;
+    }
+    .mensaje-flotante.mostrar {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    /* Responsive */
+    @media (max-width: 820px) {
+      main {
+        flex-direction: column;
+        max-width: 90vw;
+      }
+      .calendar, #contacto {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <img src="Imagenes/logo 1.png" alt="Logo" />
+    <h1>Miau's Nails</h1>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="comentarios.html">Comentarios</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <div class="calendar" id="calendar-container" aria-label="Calendario de reservas">
+    <header>
+      <select id="month" aria-label="Seleccionar mes"></select>
+      <select id="year" aria-label="Seleccionar año"></select>
+    </header>
+    <table>
+      <thead>
+        <tr>
+          <th>Dom</th><th>Lun</th><th>Mar</th><th>Mié</th><th>Jue</th><th>Vie</th><th>Sáb</th>
+        </tr>
+      </thead>
+      <tbody id="calendar-body"></tbody>
+    </table>
+  </div>
+
+  <section id="contacto">
+    <h2>Reservar cita</h2>
+    <form id="contactForm" novalidate>
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre" />
+
+      <label for="telefono">Teléfono:</label>
+      <input type="tel" id="telefono" name="telefono" required pattern="[0-9]{8}" placeholder="Ej: 71401234" title="Ingresa un número de 8 dígitos" />
+
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" name="mensaje" required placeholder="Escribe tu mensaje"></textarea>
+
+      <input type="hidden" id="fechaSeleccionada" name="fecha" />
+
+      <button type="submit" disabled>Enviar</button>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 Salón Manicurista. Todos los derechos reservados.</p>
+</footer>
+
+<div id="mensajeFlotante" class="mensaje-flotante" role="alert" aria-live="assertive">¡Mensaje enviado!</div>
+
+<script>
+  // Variables DOM
+  const monthSelect = document.getElementById('month');
+  const yearSelect = document.getElementById('year');
+  const calendarBody = document.getElementById('calendar-body');
+  const fechaSeleccionadaInput = document.getElementById('fechaSeleccionada');
+  const submitButton = document.querySelector('#contactForm button');
+  const mensajeFlotante = document.getElementById('mensajeFlotante');
+  const form = document.getElementById('contactForm');
+
+  // Datos meses
+  const months = [
+    'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+    'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
+  ];
+
+  // Inicializar selects mes y año
+  function initMonthYear() {
+    const today = new Date();
+    // Mes actual y próximos 11 meses
+    for(let i=0; i<12; i++) {
+      let monthIndex = (today.getMonth() + i) % 12;
+      let option = document.createElement('option');
+      option.value = monthIndex;
+      option.textContent = months[monthIndex];
+      monthSelect.appendChild(option);
+    }
+
+    // Año actual y próximos 2 años
+    const currentYear = today.getFullYear();
+    for(let y=currentYear; y<=currentYear+2; y++) {
+      let option = document.createElement('option');
+      option.value = y;
+      option.textContent = y;
+      yearSelect.appendChild(option);
+    }
+
+    // Seleccionar el mes y año actual por defecto
+    monthSelect.value = today.getMonth();
+    yearSelect.value = today.getFullYear();
+  }
+
+  // Construir calendario
+  function buildCalendar(month, year) {
+    calendarBody.innerHTML = '';
+
+    // Primer día del mes
+    const firstDay = new Date(year, month, 1).getDay();
+    // Días del mes
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+    // Hoy para deshabilitar días pasados
+    const today = new Date();
+    today.setHours(0,0,0,0);
+
+    let dateNumber = 1;
+    for(let row=0; row<6; row++) {
+      const tr = document.createElement('tr');
+
+      for(let day=0; day<7; day++) {
+        const td = document.createElement('td');
+
+        if(row === 0 && day < firstDay) {
+          td.textContent = '';
+          td.classList.add('disabled');
+        } else if(dateNumber > daysInMonth) {
+          td.textContent = '';
+          td.classList.add('disabled');
+        } else {
+          const currentDate = new Date(year, month, dateNumber);
+          td.textContent = dateNumber;
+
+          if(currentDate < today) {
+            td.classList.add('disabled');
+          } else {
+            td.tabIndex = 0;
+            td.setAttribute('role', 'button');
+            td.setAttribute('aria-label', `Seleccionar día ${dateNumber} de ${months[month]} ${year}`);
+
+            td.addEventListener('click', () => selectDate(td, currentDate));
+            td.addEventListener('keydown', (e) => {
+              if(e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                selectDate(td, currentDate);
+              }
+            });
+          }
+          dateNumber++;
+        }
+        tr.appendChild(td);
+      }
+      calendarBody.appendChild(tr);
+    }
+  }
+
+  // Fecha seleccionada y marcado visual
+  function selectDate(td, dateObj) {
+    // Quitar clase selected en todos
+    const allDays = calendarBody.querySelectorAll('td');
+    allDays.forEach(day => day.classList.remove('selected'));
+
+    // Añadir clase selected al día clickeado
+    td.classList.add('selected');
+
+    // Guardar fecha en formato YYYY-MM-DD en el input hidden
+    const y = dateObj.getFullYear();
+    const m = String(dateObj.getMonth() + 1).padStart(2, '0');
+    const d = String(dateObj.getDate()).padStart(2, '0');
+    const fechaStr = `${y}-${m}-${d}`;
+    fechaSeleccionadaInput.value = fechaStr;
+
+    // Habilitar botón enviar
+    submitButton.disabled = false;
+  }
+
+  // Inicialización
+  initMonthYear();
+  buildCalendar(monthSelect.value, yearSelect.value);
+
+  // Actualizar calendario al cambiar mes o año
+  monthSelect.addEventListener('change', () => {
+    fechaSeleccionadaInput.value = '';
+    submitButton.disabled = true;
+    buildCalendar(parseInt(monthSelect.value), parseInt(yearSelect.value));
+  });
+  yearSelect.addEventListener('change', () => {
+    fechaSeleccionadaInput.value = '';
+    submitButton.disabled = true;
+    buildCalendar(parseInt(monthSelect.value), parseInt(yearSelect.value));
+  });
+
+  // Validar teléfono para patrón y mostrar feedback
+  const telefonoInput = document.getElementById('telefono');
+  telefonoInput.addEventListener('input', () => {
+    if(telefonoInput.validity.patternMismatch){
+      telefonoInput.setCustomValidity("El teléfono debe tener 8 dígitos numéricos.");
+    } else {
+      telefonoInput.setCustomValidity("");
+    }
+  });
+
+  // Envío formulario simulado
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    // Si no hay fecha seleccionada no enviar
+    if(!fechaSeleccionadaInput.value){
+      alert('Por favor selecciona una fecha en el calendario.');
+      return;
+    }
+
+    // Aquí podrías integrar la lógica real de envío (API, backend, etc.)
+
+    // Mostrar mensaje flotante
+    mensajeFlotante.classList.add('mostrar');
+
+    // Ocultar mensaje después de 3 segundos
+    setTimeout(() => {
+      mensajeFlotante.classList.remove('mostrar');
+    }, 3000);
+
+    // Resetear formulario y deshabilitar botón
+    form.reset();
+    fechaSeleccionadaInput.value = '';
+    submitButton.disabled = true;
+
+    // Quitar selección de calendario
+    const allDays = calendarBody.querySelectorAll('td');
+    allDays.forEach(day => day.classList.remove('selected'));
+  });
+</script>
+
+</body>
+</html>

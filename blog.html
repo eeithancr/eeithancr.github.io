@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Salón de manicura profesional para cuidar tus manos y uñas." />
+  <title>Salón Manicurista - Blog</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Estilos extra para Blog */
+    main {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    .posts-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    .post-card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease;
+      cursor: default;
+    }
+    .post-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+    }
+    .post-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+    .post-content {
+      padding: 15px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .post-content h3 {
+      margin: 0 0 10px 0;
+      font-size: 1.2rem;
+      color: #333;
+    }
+    .post-content p {
+      flex-grow: 1;
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.4;
+    }
+    .post-date {
+      font-size: 0.8rem;
+      color: #999;
+      margin-top: 10px;
+      text-align: right;
+    }
+    #verMasPosts {
+      display: block;
+      margin: 0 auto 40px auto;
+      padding: 12px 30px;
+      background-color: #00bcd4;
+      border: none;
+      border-radius: 30px;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    #verMasPosts:hover {
+      background-color: #028a9b;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="Imagenes/logo 1.png" alt="Logo" width="200" height="200" />
+      <h1>Miau's Nails</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
+        <li><a href="comentarios.html">Comentarios</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Blog de Miau's Nails</h2>
+    <div class="posts-container" id="postsContainer">
+      <!-- Posts se cargan aquí -->
+    </div>
+    <button id="verMasPosts">Ver más artículos</button>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Salón Manicurista. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    const postsData = [
+      {
+        titulo: "Tendencias de uñas 2025",
+        resumen: "Descubre los colores y estilos que serán tendencia este año para tus uñas.",
+        imagen: "Imagenes/uñastendencia.jpeg",
+        fecha: "2025-05-10",
+      },
+      {
+        titulo: "Cuidados para uñas saludables",
+        resumen: "Tips esenciales para mantener tus uñas fuertes y bonitas todo el año.",
+        imagen: "Imagenes/uñasaludable.jpeg",
+        fecha: "2025-04-22",
+      },
+      {
+        titulo: "Beneficios de la manicura con gel",
+        resumen: "Conoce por qué la manicura con gel es una opción duradera y brillante.",
+        imagen: "Imagenes/manicuracongel.jpeg",
+        fecha: "2025-03-30",
+      },
+      {
+        titulo: "Diseños creativos para uñas acrílicas",
+        resumen: "Inspírate con los diseños más originales para tus uñas acrílicas.",
+        imagen: "Imagenes/diseñoscreativos.jpeg",
+        fecha: "2025-02-15",
+      },
+      {
+        titulo: "Mantenimiento ideal para uñas artificiales",
+        resumen: "Cómo cuidar tus uñas acrílicas o de gel para que duren más tiempo.",
+        imagen: "Imagenes/mantenimientouñas.jpeg",
+        fecha: "2025-01-05",
+      },
+      {
+        titulo: "Uñas naturales: cuidados básicos",
+        resumen: "Si prefieres las uñas naturales, aprende cómo mantenerlas en perfecto estado.",
+        imagen: "Imagenes/uñasnaturales.jpeg",
+        fecha: "2024-12-18",
+      }
+    ];
+
+    let postsCargados = 0;
+    const postsPorCarga = 3;
+    const postsContainer = document.getElementById("postsContainer");
+    const btnVerMas = document.getElementById("verMasPosts");
+
+    function mostrarPosts() {
+      const siguientePosts = postsData.slice(postsCargados, postsCargados + postsPorCarga);
+      siguientePosts.forEach(post => {
+        const postElement = document.createElement("article");
+        postElement.classList.add("post-card");
+        postElement.innerHTML = `
+          <img src="${post.imagen}" alt="${post.titulo}" />
+          <div class="post-content">
+            <h3>${post.titulo}</h3>
+            <p>${post.resumen}</p>
+            <div class="post-date">${new Date(post.fecha).toLocaleDateString('es-ES', { year:'numeric', month:'long', day:'numeric' })}</div>
+          </div>
+        `;
+        postsContainer.appendChild(postElement);
+      });
+      postsCargados += postsPorCarga;
+
+      if (postsCargados >= postsData.length) {
+        btnVerMas.style.display = "none";
+      }
+    }
+
+    btnVerMas.addEventListener("click", mostrarPosts);
+
+    // Carga inicial
+    mostrarPosts();
+  </script>
+</body>
+</html>

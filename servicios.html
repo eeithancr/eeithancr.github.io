@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Salón de manicura profesional para cuidar tus manos y uñas." />
+  <title>Salón Manicurista - Servicios</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Contenedor para todas las tarjetas */
+    .cards-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    /* Tarjeta de servicio */
+    .card {
+      background-color: #f6e6fa;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Imagen del servicio */
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .card img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Info dentro de la tarjeta */
+    .info {
+      padding: 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .info h2 {
+      color: #5c2c92;
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+    }
+
+    .info p {
+      color: #333;
+      margin-bottom: 12px;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    .precio {
+      color: #9c4e97;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    /* Header y Footer simples */
+    header, footer {
+      background-color: #9c4e97;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+    }
+
+    header .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    header .logo img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      padding: 10px 0 0;
+      flex-wrap: wrap;
+    }
+
+    nav ul li a {
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #f4b2d1;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .card img {
+        height: 150px;
+      }
+
+      .info h2 {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="Imagenes/logo 1.png" alt="Logo Miau's Nails" />
+      <h1>Miau's Nails</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="comentarios.html">Comentarios</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="cards-container">
+    <div class="card">
+      <a href="GelX.html">
+        <img src="Imagenes/GelX.jpeg" alt="Manicura con Gel" />
+      </a>
+      <div class="info">
+        <h2>Manicura con Gel X</h2>
+        <p>Técnica innovadora que utiliza extensiones de gel preformadas, ofreciendo un acabado natural, duradero y menos agresivo para la uña natural.</p>
+        <p class="precio">$20 USD</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <a href="Acrilicas.html">
+        <img src="Imagenes/Acrilicas.jpeg" alt="Uñas Acrílicas" />
+      </a>
+      <div class="info">
+        <h2>Uñas Acrílicas</h2>
+        <p>Uñas esculpidas con monómero y polímero acrílico, ideales para alargar y fortalecer, con gran variedad de diseños y estilos.</p>
+        <p class="precio">$20 USD</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <a href="Mantenimiento.html">
+        <img src="Imagenes/Mantenimiento.jpeg" alt="Mantenimiento" />
+      </a>
+      <div class="info">
+        <h2>Mantenimiento</h2>
+        <p>Servicio para rellenar el crecimiento de uñas esculpidas, restaurar el diseño original y mantener su forma y resistencia.</p>
+        <p class="precio">$20 USD</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <a href="PediSpa.html">
+        <img src="Imagenes/PediSpa.jpeg" alt="PediSpa" />
+      </a>
+      <div class="info">
+        <h2>Pedicure Spa</h2>
+        <p>Tratamiento completo para pies que incluye exfoliación, hidratación, corte y limado de uñas, más esmaltado y masaje relajante.</p>
+        <p class="precio">$20 USD</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <a href="FundaDeCalcio.html">
+        <img src="Imagenes/FundaDeCalcio.jpeg" alt="Funda de calcio en uña natural" />
+      </a>
+      <div class="info">
+        <h2>Funda de calcio en uña natural</h2>
+        <p>Capa protectora aplicada sobre la uña natural que fortalece, repara y previene el quiebre, ideal para uñas débiles o en proceso de recuperación.</p>
+        <p class="precio">$20 USD</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Salón Manicurista. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>
